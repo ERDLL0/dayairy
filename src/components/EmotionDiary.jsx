@@ -107,8 +107,6 @@ const EmotionDiary = () => {
 
     </div>
 );
-
-  );
 };
 
 export default EmotionDiary;
