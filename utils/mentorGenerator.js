@@ -1,66 +1,89 @@
-const mentorSuggestions = {
-  happy: [
-    "Harika! Bu güzel enerjini başkalarına da yaymayı unutma 🌞",
-    "Mutluluğunu yazıya dökmek onu kalıcı hale getirir ✍️",
-    "Bugünkü mutluluğunu hatırlamak için küçük bir not al 😄"
+const mentorData = {
+  mutlu: [
+    "Harika hissediyorsun! Bu enerjiyi etrafındakilere yaymaya devam et.",
+    "Pozitif düşünceler başarıya götürür, aynen böyle devam!",
   ],
-  sad: [
-    "Hüzün geçicidir, yazdıkça hafifler... 🌧️",
-    "Derin nefes al, hissettiğin her şey geçecek 🍃",
-    "Bir arkadaşınla duygularını paylaşmayı dene 🤝"
+  üzgün: [
+    "Üzgün hissetmek normal. Kendine nazik davran ve zamanla iyileşeceksin.",
+    "Duygularını ifade etmek iyileştirir, istersen bir günlük tutmaya devam et.",
   ],
-  angry: [
-    "Sakinleşmek için birkaç derin nefes al 🧘",
-    "Öfkeni yapıcı şekilde ifade etmek güçtür 💪",
-    "Şu anda hissettiklerin gelip geçici, sen kontrolsüz değilsin 🔥"
+  kızgın: [
+    "Kızgınlık güçlü bir duygudur, derin nefes al ve sakinleşmeye odaklan.",
+    "Enerjini yapıcı bir şeye yönlendirerek rahatlayabilirsin.",
   ],
-  anxious: [
-    "Kendine nazik ol, bu duygular normal 🫶",
-    "Kaygılarını yazıya dökmek onları hafifletir 📓",
-    "Şu an buradasın ve güvendesin 🕊️"
+  endişeli: [
+    "Endişelerini yazmak onları hafifletebilir, bugün sakin kalmaya odaklan.",
+    "Küçük adımlar büyük fark yaratır, her şey yoluna girecek.",
   ],
-  excited: [
-    "Bu enerjini yaratıcı bir işe dönüştür 💡",
-    "Heyecanını paylaş, bulaşıcıdır! 🎉",
-    "Yeni bir şeyler denemek için harika bir zamandasın 🚀"
+  yorgun: [
+    "Dinlenmek ve kendine zaman ayırmak sağlığın için çok önemli.",
+    "Enerjini yenilemek için sevdiğin şeyleri yapmayı unutma.",
   ],
-  bored: [
-    "Sıkıldığında hayal gücün parlar ✨",
-    "Kendine yeni küçük hedefler koymayı dene 🎯",
-    "Harekete geçmek için minik bir adım at 🚶"
+  "sevgi dolu": [
+    "Sevgi dolu hissetmek hayatın en güzel duygularından biri, paylaşmaya devam et!",
+    "Sevgiyle dolu anların seni güçlendirsin.",
   ],
-  lonely: [
-    "Yalnız hissetmek, bağ kurma ihtiyacını gösterir ❤️",
-    "Birine yaz, biriyle konuş. Sesini duyur 📱",
-    "Sen değerlisin ve görülmeye layıksın 🌟"
+  düşünceli: [
+    "Düşüncelerinle barışık olmak büyümenin işaretidir, kendine zaman ver.",
+    "Yeni fikirler ve farkındalıklar için bu dönemi iyi değerlendir.",
   ],
-  grateful: [
-    "Minnettarlık kalbin gücüdür 💖",
-    "Bugün minnet duyduğun 3 şeyi yazmayı dene 📝",
-    "Bu duyguyu hatırlamak için bir fotoğraf çek 📷"
+  "kendinden emin": [
+    "Özgüvenin seni başarıya götürür, bunu her zaman hatırla!",
+    "Kendine inandıkça sınırların kalkar.",
   ],
-  tired: [
-    "Yorgunsan durmak, dinlenmek en büyük ilerlemedir 🛌",
-    "Kendine iyi bakmak da üretkenliktir 🍵",
-    "İç sesini dinle: Ne kadar yavaşlarsan o kadar duyarsın 🍃"
+  aşık: [
+    "Kalbinin sesini dinlemeye devam et, sevgi her zaman iyileştirir.",
+    "Aşk seni motive eden en güzel güçlerden biridir.",
   ],
-  hopeful: [
-    "Umut etmek, geleceğe uzanmaktır 🌈",
-    "Bugün umut dolu bir adım at 👣",
-    "Işık arıyorsan, bazen sen ışık olursun ✨"
+  enerjik: [
+    "Enerjinle çevreni aydınlatıyorsun, harika hissediyorsun!",
+    "Bu enerjiyi yaratıcı işlere kanalize etmek harika olur.",
   ],
-  confused: [
-    "Her kafa karışıklığı yeni bir keşfin başlangıcıdır 🧭",
-    "Netlik için zihnini dinle ve yaz 📝",
-    "Sorular sormaktan korkma, cevaplar yoldadır 🔍"
+  huzurlu: [
+    "Sakinlik ve huzur, ruhunun ihtiyaç duyduğu en güzel şeylerdir.",
+    "Bu anın tadını çıkar ve kendine iyi davran.",
+  ],
+  yalnız: [
+    "Yalnızlık bazen kendini keşfetmek için fırsattır, kendinle vakit geçir.",
+    "İçsel gücünü keşfetmeye devam et, sen değerli ve önemlisin.",
+  ],
+  sinirli: [
+    "Sinirlerini kontrol etmek seni güçlü kılar, derin nefes al.",
+    "Olumsuz enerjiyi pozitife çevirmek için bir fırsat olarak gör.",
+  ],
+  şefkatli: [
+    "Şefkat göstermek kalplerin en güzel bağını kurar.",
+    "Bu duygunu çevrene yay ve dünyayı güzelleştir.",
+  ],
+  rahat: [
+    "Rahatlamak, zihnini yenilemenin anahtarıdır, kendine izin ver.",
+    "Sakin ve huzurlu anların çoğalsın.",
+  ],
+  heyecanlı: [
+    "Heyecan yeni maceralara kapı açar, bu enerjiyi iyi kullan!",
+    "Pozitif heyecan motivasyonunu artırır.",
+  ],
+  melankolik: [
+    "Melankoli bazen iç dünyanı anlaman için bir çağrıdır.",
+    "Kendine şefkat göster ve duygularına zaman tanı.",
+  ],
+  şaşkın: [
+    "Yeni deneyimler kafa karıştırabilir, ama bu büyümenin işaretidir.",
+    "Merakla keşfetmeye devam et.",
+  ],
+  minnettar: [
+    "Minnettarlık hayatı güzelleştirir, teşekkür etmeyi unutma.",
+    "Pozitif düşüncelerini çoğaltmaya devam et.",
+  ],
+  tutkulu: [
+    "Tutkun seni zirveye taşır, bunu asla kaybetme.",
+    "Sevdiğin şeylerin peşinden gitmek sana güç verir.",
   ]
 };
 
-export function getMentorSuggestion(emotion) {
-  const suggestions = mentorSuggestions[emotion];
-  if (!suggestions || suggestions.length === 0) return "Bu duygu için henüz bir öneri eklenmemiş.";
-
-  // Rastgele öneri seç
-  const randomIndex = Math.floor(Math.random() * suggestions.length);
-  return suggestions[randomIndex];
+export function getMentorMessage(emotion) {
+  const messages = mentorData[emotion];
+  if (!messages) return "Bugün nasıl hissettiğini paylaştığın için teşekkürler. Kendine iyi bak!";
+  const randomIndex = Math.floor(Math.random() * messages.length);
+  return messages[randomIndex];
 }

@@ -1,4 +1,90 @@
-import React from 'react';
+
+import React, { useMemo } from 'react';
+
+const StatsPanel = ({ entries }) => {
+  // Duygu dağılımı için sayım
+  const emotionCounts = useMemo(() => {
+    const counts = {};
+    entries.forEach(entry => {
+      counts[entry.emotion] = (counts[entry.emotion] || 0) + 1;
+    });
+    return counts;
+  }, [entries]);
+
+  // Yazma sıklığı - tarih bazında kaç günlük giriş yapılmış
+  const writingDays = useMemo(() => {
+    const uniqueDates = new Set(entries.map(entry => entry.date));
+    return uniqueDates.size;
+  }, [entries]);
+
+  // Toplam kayıt sayısı
+  const totalEntries = entries.length;
+
+  // Duygu renkleri ve emojiler (İstersen EmotionDiary'den import edilebilir)
+  const emotionMeta = {
+    mutlu: { color: '#FBBF24', emoji: '😊' },
+    üzgün: { color: '#3B82F6', emoji: '😢' },
+    kızgın: { color: '#EF4444', emoji: '😡' },
+    endişeli: { color: '#8B5CF6', emoji: '😰' },
+    yorgun: { color: '#6B7280', emoji: '😴' },
+    'sevgi dolu': { color: '#EC4899', emoji: '🥰' },
+    düşünceli: { color: '#14B8A6', emoji: '🤔' },
+    'kendinden emin': { color: '#22C55E', emoji: '😎' },
+    aşık: { color: '#F43F5E', emoji: '😍' },
+    enerjik: { color: '#F97316', emoji: '⚡' },
+    huzurlu: { color: '#34D399', emoji: '🧘' },
+    yalnız: { color: '#94A3B8', emoji: '😔' },
+    sinirli: { color: '#EF4444', emoji: '🤬' },
+    şefkatli: { color: '#FBBF24', emoji: '🤗' },
+    rahat: { color: '#6366F1', emoji: '😌' },
+    heyecanlı: { color: '#A855F7', emoji: '🥳' },
+    melankolik: { color: '#6366F1', emoji: '😪' },
+    şaşkın: { color: '#22D3EE', emoji: '🤯' },
+    minnettar: { color: '#FCD34D', emoji: '😇' },
+    tutkulu: { color: '#F87171', emoji: '🔥' }
+  };
+
+  return (
+    <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 mt-6 max-w-4xl mx-auto shadow-lg">
+      <h2 className="text-xl font-semibold mb-4" style={{ fontFamily: 'Kalam, cursive' }}>
+        📊 İstatistik Paneli
+      </h2>
+      <div className="mb-4">
+        <strong>Toplam Günlük Giriş Sayısı:</strong> {totalEntries}
+      </div>
+      <div className="mb-4">
+        <strong>Farklı Günlerde Yazılan Gün Sayısı:</strong> {writingDays}
+      </div>
+
+      <div>
+        <strong>Duygu Dağılımı:</strong>
+        <ul className="mt-2 space-y-2 max-h-48 overflow-y-auto">
+          {Object.entries(emotionCounts).length === 0 && (
+            <li className="text-gray-500 italic">Henüz kayıt yok.</li>
+          )}
+          {Object.entries(emotionCounts).map(([emotion, count]) => {
+            const meta = emotionMeta[emotion] || { color: '#888', emoji: '❓' };
+            const percentage = ((count / totalEntries) * 100).toFixed(1);
+            return (
+              <li key={emotion} className="flex items-center justify-between">
+                <span className="flex items-center space-x-2">
+                  <span style={{ fontSize: '1.5rem' }}>{meta.emoji}</span>
+                  <span>{emotion.charAt(0).toUpperCase() + emotion.slice(1)}</span>
+                </span>
+                <span style={{ color: meta.color, fontWeight: '600' }}>
+                  {count} ({percentage}%)
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default StatsPanel;
+
 
 const StatsPanel = ({ stats }) => {
   if (!stats) return null;
@@ -65,3 +151,5 @@ const StatsPanel = ({ stats }) => {
 };
 
 export default StatsPanel;
+
+

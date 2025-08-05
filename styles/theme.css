@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Örnek özel stiller */
+
+body {
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* İstersen özel bir class ile: */
+.font-handwriting {
+  font-family: 'Patrick Hand', 'Indie Flower', 'Shadows Into Light', 'Gloria Hallelujah', cursive;
+}
+
+input, textarea {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* El yazısı fontu örneği (Google Fonts kullanılabilir) */
+
+.font-handwriting {
+  font-family: 'Patrick Hand', cursive;
+}

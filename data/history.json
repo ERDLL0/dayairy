@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "date": "2025-08-01",
+    "emotion": "mutlu",
+    "content": "Bugün harika bir gün geçirdim, çok mutluyum!"
+  },
+  {
+    "id": 2,
+    "date": "2025-08-02",
+    "emotion": "üzgün",
+    "content": "Biraz zor bir gün oldu ama üstesinden geldim."
+  }
+]

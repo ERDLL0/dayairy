@@ -13,6 +13,7 @@ import { generateMentorAdvice } from '../utils/mentorGenerator';
 import { changeThemeByEmotion } from '../utils/themeChanger';
 import { countWords } from '../utils/wordCounter';
 
+
 const EmotionDiary = () => {
   const [entry, setEntry] = useState('');
   const [selectedEmotion, setSelectedEmotion] = useState(null);
@@ -101,7 +102,12 @@ const EmotionDiary = () => {
       <HistoryCards history={history} />
 
       <StatsPanel history={history} />
+
+      <StatsPanel entries={entries} />
+
     </div>
+);
+
   );
 };
 
